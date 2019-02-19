@@ -1,0 +1,48 @@
+1. Use the given link and locate the bank marketing dataset. Data Set Link
+Perform the below operations:
+a. Create a visual for representing missing values in the dataset.
+   Ans:
+     >which(is.na(data))
+     result:integer(0)  #no missing values
+
+
+b. Show a distribution of clients based on a Job.
+
+   Ans:barplot(table(data$job),main = "clients based on a Job",
+                xlab = "name of jobs",col = "yellow",border = "blue")
+
+c. Check whether is there any relation between Job and Marital Status?
+   Ans:
+      >job<-as.numeric(data$job)
+      >marital<-as.numeric(data$marital)
+      >cor(job,marital) 
+      [1] 0.06939026     #
+    
+       >bartable = table(data$job, data$marital)  
+       >barplot(bartable, beside = TRUE, legend =levels(unique(data$job)))
+
+d. Check whether is there any association between Job and Education?
+   Ans:
+      >job<-as.numeric(data$job)
+      >education<-as.numeric(data$education)
+      >cor(job,education) 
+      [1] 0.1701602    #
+                    
+
+      >bartable = table(data$job, data$education)  
+      >barplot(bartable, beside = TRUE, legend =levels(unique(data$job)))
+
+   #employe with primary education are mostly placed in blue-collar job
+    secondary education are placed in different jobs and tertiary aer mostly placed in 
+    managment and unknown are placed in less jobs
+
+   #Positive Direction of Association is there between Job and Education
+
+
+
+
+
+
+
+
+
